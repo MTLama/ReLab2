@@ -79,7 +79,15 @@ namespace lab2
             }
             public void Print()
             {
-                for (int i = 0; i < Size; i++)
+
+            if (X == null)
+            {
+                throw new ShapeException("Coordinates are not set.");
+            }
+
+
+
+            for (int i = 0; i < Size; i++)
                 {
                     for (int j = 0; j < Size; j++)
                         Console.Write("{0} ", C[i, j]);

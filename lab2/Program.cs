@@ -225,11 +225,28 @@ namespace lab2
     {
         static void Main(string[] args)
         {
-            double[,] triangleCoordinates = { { 0, 0 }, { 1, 0 }, { 1, 1 } }; // Координати вершин СЕ
-            ShapeTriangle ShapeTriangle = new ShapeTriangle(triangleCoordinates);
-            ShapeTriangle.Print();
 
-            double[,] tetrahedronQuadricCoordinates = {
+            try
+            {
+                double[,] triangleCoordinates = { { 0, 0 }, { 1, 0 }, { 1, 1 } }; // Координати вершин СЕ
+            ShapeTriangle ShapeTriangle = new ShapeTriangle(triangleCoordinates);
+                ShapeTriangle.Print();
+            }
+            catch (ShapeException ex)
+            {
+                Console.WriteLine($"ShapeException: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            }
+
+
+
+
+            try
+            {
+                double[,] tetrahedronQuadricCoordinates = {
     {0.0, 0.0, 0.0},
     {1.0, 0.0, 0.0},
     {0.0, 1.0, 0.0},
@@ -243,8 +260,21 @@ namespace lab2
 };
             ShapeQuadraticTetrahedron ShapeQuadraticTetrahedron = new ShapeQuadraticTetrahedron(tetrahedronQuadricCoordinates);
             ShapeQuadraticTetrahedron.Print();
+            }
+            catch (ShapeException ex)
+            {
+                Console.WriteLine($"ShapeException: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            }
 
-            double[,] quadraticTriangleCoordinates = {
+
+
+            try
+                {
+                    double[,] quadraticTriangleCoordinates = {
     {0.0, 0.0},
     {1.0, 0.0},
     {0.0, 1.0},
@@ -254,8 +284,21 @@ namespace lab2
 };
             ShapeQuadraticTriangle ShapeQuadraticTriangle = new ShapeQuadraticTriangle(quadraticTriangleCoordinates);
             ShapeQuadraticTriangle.Print();
+                }
+                catch (ShapeException ex)
+                {
+                    Console.WriteLine($"ShapeException: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                }
 
-            double[,] cubeCoordinates = {
+
+
+                try
+                    {
+                        double[,] cubeCoordinates = {
     {0.0, 0.0, 0.0},
     {1.0, 0.0, 0.0},
     {1.0, 1.0, 0.0},
@@ -267,8 +310,20 @@ namespace lab2
 };
             ShapeCube ShapeCube = new ShapeCube(cubeCoordinates);
             ShapeCube.Print();
+                    }
+                    catch (ShapeException ex)
+                    {
+                        Console.WriteLine($"ShapeException: {ex.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                    }
 
-            double[,] tetrahedronCoordinates = {
+
+                    try
+                        {
+                            double[,] tetrahedronCoordinates = {
     {0.0, 0.0, 0.0},
     {1.0, 0.0, 0.0},
     {0.0, 1.0, 0.0},
@@ -276,8 +331,20 @@ namespace lab2
 };
             ShapeTetrahedron ShapeTetrahedron = new ShapeTetrahedron(tetrahedronCoordinates);
             ShapeTetrahedron.Print();
+                        }
+                        catch (ShapeException ex)
+                        {
+                            Console.WriteLine($"ShapeException: {ex.Message}");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                        }
 
-            double[,] squareCoordinates = {
+
+                        try
+                            {
+                                double[,] squareCoordinates = {
     {0.0, 0.0},
     {1.0, 0.0},
     {1.0, 1.0},
@@ -285,8 +352,16 @@ namespace lab2
 };
             ShapeSquare ShapeSquare = new ShapeSquare(squareCoordinates);
             ShapeSquare.Print();
+                            }
+                            catch (ShapeException ex)
+                            {
+                                Console.WriteLine($"ShapeException: {ex.Message}");
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+                            }
 
-
-        }
+                        }
     }
 }
